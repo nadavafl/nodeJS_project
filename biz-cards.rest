@@ -1,0 +1,153 @@
+### Users options:
+
+### Get all users by admin
+GET http://localhost:8080/api/v1/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVsbHZpc0BlbWFpbC5jb20iLCJpZCI6IjY1N2IxMjk0NzU0ZmE4NzE5ZDMxZmU3NiIsImlzQnVzaW5lc3MiOnRydWUsImlzQWRtaW4iOnRydWUsImlhdCI6MTcwMjg5NTI2OH0.R3xwSiGlXWy1RGzpg2aCOBTpnJC9Z9gTu7-_FApyFdk
+
+
+### Login
+POST http://localhost:8080/api/v1/users/login
+Content-Type: application/json
+
+{
+  "email": "bobb@email.com",
+  "password": "Bob!123Bob"
+}
+
+
+### Get user by user id or admin
+GET http://localhost:8080/api/v1/users/658b02563f3514e2a69d38db
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlNoYW1pc29vc0BlbWFpbC5jb20iLCJpZCI6IjY1OGIwMjU2M2YzNTE0ZTJhNjlkMzhkYiIsImlzQnVzaW5lc3MiOmZhbHNlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzAzNjA4OTcwfQ.tPTbhEBZM9YqQQlA9nHBMpSYlws1WJtN-hHOXBB-tKM
+
+
+### Post a user:
+POST http://localhost:8080/api/v1/users
+Content-Type: application/json
+
+{
+  "name": {
+    "first": "shami",
+    "middle": "So",
+    "last": "Shamisoos"
+  },
+  "phone": "0546000000",
+  "email": "Shamisoos@email.com",
+  "password": "Shami!123Shami",
+  "image": {
+    "url": "https://www.picsum.photos/200/303",
+    "alt": "picsum"
+  },
+  "address": {
+    "state": "Texas",
+    "country": "US",
+    "city": "Dallas",
+    "street": "Main St",
+    "houseNumber": 3,
+    "zip": 75201
+  },
+  "isBusiness": false
+}
+
+
+###PUT - Change a users:
+PUT http://localhost:8080/api/v1/users/658b02563f3514e2a69d38db
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlNoYW1pc29vc0BlbWFpbC5jb20iLCJpZCI6IjY1OGIwMjU2M2YzNTE0ZTJhNjlkMzhkYiIsImlzQnVzaW5lc3MiOmZhbHNlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzAzNjA4OTcwfQ.tPTbhEBZM9YqQQlA9nHBMpSYlws1WJtN-hHOXBB-tKM
+
+{
+ "name": {
+    "first": "Lior",
+    "middle": "Avi",
+    "last": "Levi"
+  }
+}
+
+
+###PATCH - Change isBusiness:
+PATCH http://localhost:8080/api/v1/users/658b02563f3514e2a69d38db
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlNoYW1pc29vc0BlbWFpbC5jb20iLCJpZCI6IjY1OGIwMjU2M2YzNTE0ZTJhNjlkMzhkYiIsImlzQnVzaW5lc3MiOmZhbHNlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzAzNjA4OTcwfQ.tPTbhEBZM9YqQQlA9nHBMpSYlws1WJtN-hHOXBB-tKM
+
+{ 
+  "isBusiness": true
+}
+
+
+###DELETE A users
+DELETE http://localhost:8080/api/v1/users/658b02563f3514e2a69d38db
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlNoYW1pc29vc0BlbWFpbC5jb20iLCJpZCI6IjY1OGIwMjU2M2YzNTE0ZTJhNjlkMzhkYiIsImlzQnVzaW5lc3MiOmZhbHNlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzAzNjA4OTcwfQ.tPTbhEBZM9YqQQlA9nHBMpSYlws1WJtN-hHOXBB-tKM
+
+
+### Cards options:
+
+###Get all cards
+GET http://localhost:8080/api/v1/cards
+
+
+###Get my-cards 
+GET http://localhost:8080/api/v1/cards/my-cards/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNoYW1pc29AZW1haWwuY29tIiwiaWQiOiI2NTgwNWU0N2I2ZWExZWVjYWY3MWE2NzIiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzAzMTYzNjYxfQ.FhI6_lB_1q0Rdhid7van27Fy66c5W33auhpjuLW8Y1c
+
+
+###Get card by id
+GET http://localhost:8080/api/v1/cards/658b021d3f3514e2a69d38bd
+
+
+###Post a card
+POST http://localhost:8080/api/v1/cards
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaWNlYUBlbWFpbC5jb20iLCJpZCI6IjY1OGFmOWY3ZTFhMTI0ZmFhNDkzYmIyMCIsImlzQnVzaW5lc3MiOnRydWUsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE3MDM2MDgzMjV9.N6f8ReGwtcYCVjSi4Y-HY1hKxkpp9LRVyLfX-um6gGk
+
+  {
+  "title": "Fourth New Card",
+  "subtitle": "Subtitle for fourth card",
+  "description": "Description for fourth card",
+  "phone": "050-3000000",
+  "email": "fourth@gmail.com",
+  "web": "http://www.duckduckgo.com",
+  "image": {
+    "url": "https://www.picsum.photos/200/303",
+    "alt": "picsum"
+  },
+  "address": {
+    "state": "IL",
+    "country": "Israel",
+    "city": "Jerusalem",
+    "street": "Jaffa",
+    "houseNumber": 3,
+    "zip": 8920438
+  }
+}
+
+
+###PUT - Change a card:
+PUT http://localhost:8080/api/v1/cards/658b03463f3514e2a69d38f0
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaWNlYUBlbWFpbC5jb20iLCJpZCI6IjY1OGFmOWY3ZTFhMTI0ZmFhNDkzYmIyMCIsImlzQnVzaW5lc3MiOnRydWUsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE3MDM2MDgzMjV9.N6f8ReGwtcYCVjSi4Y-HY1hKxkpp9LRVyLfX-um6gGk
+
+{
+  "subtitle": "Shitty subtitle",
+  "address": {
+      "city": "Hara"
+  }
+}
+
+
+###PATCH - Add like to card:
+PATCH http://localhost:8080/api/v1/cards/658c0dea50432b3b248d3157
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJvYmJAZW1haWwuY29tIiwiaWQiOiI2NThjMGRlYTUwNDMyYjNiMjQ4ZDMxNTMiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MDM2Nzg4NDl9.iRfPvAzELYIBlYMXguA3RXgNks8VpiIsus0z8wIQ4Gk
+
+
+###DELETE A card
+DELETE http://localhost:8080/api/v1/cards/658b03463f3514e2a69d38f0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaWNlYUBlbWFpbC5jb20iLCJpZCI6IjY1OGFmOWY3ZTFhMTI0ZmFhNDkzYmIyMCIsImlzQnVzaW5lc3MiOnRydWUsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE3MDM2MDgzMjV9.N6f8ReGwtcYCVjSi4Y-HY1hKxkpp9LRVyLfX-um6gGk
+
+
+### Update bizNumber by admin
+PATCH http://localhost:8080/api/v1/cards/bizNumber/658c0dea50432b3b248d315a
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJvYmJAZW1haWwuY29tIiwiaWQiOiI2NThjMGRlYTUwNDMyYjNiMjQ4ZDMxNTMiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MDM2Nzg4NDl9.iRfPvAzELYIBlYMXguA3RXgNks8VpiIsus0z8wIQ4Gk
+
+{
+  "bizNumber": "1234567890"
+}
