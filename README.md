@@ -1,15 +1,8 @@
-
-#TODO: fix readme
-
 # Getting Started with node server App
 
 ## Installation
 
 Enter the server folder
-
-```bash
-cd server
-```
 
 Install the node_modules
 
@@ -27,7 +20,7 @@ you can run:
 - The page will not reload if you make edits.
 - You must have a mongoDB Atlas Cluster
 
-### `npm run dev`
+### `npm run watch`
 
 - Runs the app with nodemon
 - The page will reload if you make edits
